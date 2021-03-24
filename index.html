@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>curve</title>
+
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #eee;
+        display: flex;
+        justify-content: center;
+        font-family: monospace;
+    }
+
+    canvas#curve {
+        background: white;
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <canvas id="curve" width="500" height="500"></canvas>
+
+        <div class="options">
+            <p>
+                <label for="min_t">Min T - </label>
+                <input type="range" name="min_t" id="min_t" min="0" max="1" value="0" step="0.001">
+
+                <label for="t">T - </label>
+                <input type="range" name="t" id="t" min="0" max="1" value="1" step="0.001">
+
+                <label for="max_t">Max T - </label>
+                <input type="range" name="max_t" id="max_t" min="0" max="1" value="1" step="0.001">
+            </p>
+
+            <p>
+                <label for="animate">Animate - </label>
+                <input type="checkbox" name="animate" id="animate">
+
+                <label for="speed">Speed - </label>
+                <input type="range" name="speed" id="speed" min="0" max="1" value="0.4" step="0.05">
+            </p>
+
+            <p>
+                <label for="edit">Edit - </label>
+                <input type="checkbox" name="edit" id="edit" checked="1">
+
+                <label for="debug">Debug - </label>
+                <input type="checkbox" name="debug" id="debug">
+
+                <button onclick="random_handles()">Randomize</button>
+            </p>
+        </div>
+
+        <script src="curve.js"></script>
+    </div>
+</body>
+</html>
